@@ -1,6 +1,9 @@
 {
   "name": "cc-demo-angular",
   "version": "0.0.0",
+  "engines": {
+    "node": ">=v22.22.2"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
