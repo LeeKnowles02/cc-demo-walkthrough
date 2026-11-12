@@ -1,0 +1,58 @@
+.header {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 0 24px;
+  background: var(--sidebar);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--foreground);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.logo-mark {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--brand);
+  color: var(--brand-foreground);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  border-bottom: 2px solid transparent;
+  color: var(--muted-foreground);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.tab.active {
+  border-bottom-color: var(--brand);
+  color: var(--foreground);
+}
+
+.account {
+  display: flex;
+  margin-left: auto;
+}
