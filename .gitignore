@@ -45,3 +45,6 @@ Thumbs.db
 
 # Written by scripts/write-version.mjs on every build
 /public/version.json
+
+# Written by scripts/docs-version-check.mjs
+/docs-check.json

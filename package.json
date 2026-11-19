@@ -11,7 +11,8 @@
     "prebuild": "node scripts/write-version.mjs",
     "build": "npx -y node@24 node_modules/@angular/cli/bin/ng.js build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "docs:check": "node scripts/docs-version-check.mjs"
   },
   "private": true,
   "packageManager": "npm@11.19.1",
