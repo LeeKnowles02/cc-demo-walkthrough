@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { ShoppingList as ShoppingListService } from './data';
+import { ShoppingList as ShoppingListService } from './shopping-list';
 
 @Component({
   selector: 'app-shopping-list',

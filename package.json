@@ -1,12 +1,14 @@
 {
   "name": "cc-demo-angular",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "engines": {
     "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
   },
   "scripts": {
     "ng": "ng",
+    "prestart": "node scripts/write-version.mjs",
     "start": "ng serve",
+    "prebuild": "node scripts/write-version.mjs",
     "build": "npx -y node@24 node_modules/@angular/cli/bin/ng.js build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

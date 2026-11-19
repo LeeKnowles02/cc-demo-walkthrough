@@ -1,6 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { RECIPES, ShoppingList } from './data';
+import { ShoppingList } from '../shopping-list/shopping-list';
+import { RECIPES } from './recipe-data';
 
 @Component({
   selector: 'app-recipes',
