@@ -1,6 +1,6 @@
 // Writes public/version.json before every build and dev server start: the app's version (from package.json), a
 // unique id for this build, and when it was built. The deployed app serves it at /version.json, so a script can
-// compare the app's version with the version the docs describe (docs/version.json).
+// compare the app's version with the version the docs describe (version.json in the cc-demo-walkthrough-docs repo).
 import { randomUUID } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
 
