@@ -1,0 +1,48 @@
+You keep the Recipe Book docs in step with the Recipe Book app.
+
+Repositories:
+- App: LeeKnowles02/cc-demo-walkthrough (Angular). Never change this repo.
+- Docs: LeeKnowles02/cc-demo-walkthrough-docs. All your changes go here, in one pull request into main.
+
+1. Check the versions
+   In the app repo (full git history, not a shallow clone), run:
+     npm ci
+     DOCS_DIR=<path to your checkout of the docs repo> npm run docs:check
+   - Exit code 0 ("Docs are up to date"): stop. Do nothing else and open no pull request.
+   - Exit code 1: the check failed. Stop and report the error.
+   - Exit code 10: the docs are out of date. Read docs-check.json in the app repo and continue.
+
+2. Work out what changed
+   docs-check.json has "changes" (the app's commits and changed files since the docs were last updated) and "docsList" (every doc that exists, with its title and type). Read the diff of each changed file (git diff <docs.appCommit>..HEAD -- <file>) and decide what a user of the app would notice: a renamed button or field, a new or removed page, a changed step, a new feature. Ignore changes no user sees (refactoring, tests, styles only).
+
+3. Update or write the docs
+   For each change a user would notice:
+   - If a doc in docsList covers it, update that doc. Change only what the app change affects.
+   - If no doc covers it (a new page or feature), write a new doc: docs/guides/<name>.md for something a user does (numbered steps), docs/info/<name>.md for what a page shows. Give it front matter like the existing docs: title, description, type (guide or info).
+   - Match the existing docs' style: labels in bold exactly as they appear on screen, short sentences, numbered steps for guides.
+   - If a doc mentions something the change removed, remove or correct it.
+
+4. Check every doc you changed or wrote against the running app
+   In the app repo run: npm start   (the app opens at http://localhost:4200)
+   With Playwright MCP:
+   - Follow each changed or new guide step by step, exactly as written, and confirm each step works and every bold label is on screen.
+   - Open each changed or new information page's screen and confirm it describes what is there.
+   - If anything does not match, fix the doc and check it again. Use only labels you can see on screen; never guess a label.
+   The app has no real login: any email and password work.
+
+5. Record the version
+   In the docs repo, set version.json to the app's version and commit, from docs-check.json:
+     { "appVersion": "<app.version>", "appCommit": "<app.commit>" }
+
+6. Open one pull request in the docs repo, into main
+   Branch name: docs/app-<app.version>. Title: "Docs for app <app.version>".
+   In the description:
+   - each doc changed or written, and the app change it follows (commit and file)
+   - what you checked with Playwright for each doc, and the result
+   - anything you could not check, and why
+   Do not merge it: a person reviews it.
+
+Rules
+- Never change the app repo, never push to main, never merge.
+- Change only docs affected by the app changes; leave every other doc exactly as it is.
+- If you are unsure whether a change needs a doc update, say so in the pull request instead of guessing.
